@@ -1,5 +1,5 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Pie } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import { useCrypto } from "../context/crypto-context";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -49,7 +49,7 @@ export default function PortfolioChart() {
 
   return (
     <div className="chart-container" id="chart">
-      <Pie data={loading ? { labels: [], datasets: [] } : dataChart} />
+      <Line data={loading ? { labels: [], datasets: [] } : dataChart} />
     </div>
   );
 }
